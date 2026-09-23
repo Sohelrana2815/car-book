@@ -1,4 +1,5 @@
 import BookingWidget from "../components/home/BookingWidget";
+import FreedomJourneySection from "../components/home/FreedomJourneySection";
 import HeroBanner from "../components/home/HeroBanner";
 import JourneySection from "../components/home/JourneySection";
 import ServicesSection from "../components/home/ServicesSection";
@@ -17,6 +18,8 @@ export default function Home() {
       <JourneySection />
       {/* 4. Services Section (~70px Vertical Padding Built-In) */}
       <ServicesSection />
+      {/* 5. Freedom in Every Journey Section (Black background) */}
+      <FreedomJourneySection />
     </main>
   );
 }
