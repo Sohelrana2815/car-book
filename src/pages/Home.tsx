@@ -1,3 +1,4 @@
+import BeyondDestinationsSection from "../components/home/BeyondDestinationsSection";
 import BookingToArrivalSection from "../components/home/BookingToArrivalSection";
 import BookingWidget from "../components/home/BookingWidget";
 import FeaturedNewsSection from "../components/home/FeaturedNewsSection";
@@ -5,6 +6,7 @@ import FreedomJourneySection from "../components/home/FreedomJourneySection";
 import HeroBanner from "../components/home/HeroBanner";
 import JourneySection from "../components/home/JourneySection";
 import MoreThanMilesSection from "../components/home/MoreThanMilesSection";
+import PassengerTestimonialsSection from "../components/home/PassengerTestimonialsSection";
 import ServicesSection from "../components/home/ServicesSection";
 import SmartDriverSection from "../components/home/SmartDriverSection";
 // import BookingSearch from "../components/home/BookingSearch";
@@ -32,6 +34,10 @@ export default function Home() {
       <SmartDriverSection />
       {/* 9. We Featured by Top News Platforms */}
       <FeaturedNewsSection />
+      {/* 10. Our Passengers Speak For Us (Feedback Section) */}
+      <PassengerTestimonialsSection />
+      {/* 11. Beyond Destinations & Mobile App Download Banner */}
+      <BeyondDestinationsSection />
     </main>
   );
 }
