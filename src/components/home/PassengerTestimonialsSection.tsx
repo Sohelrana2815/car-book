@@ -35,8 +35,9 @@ const TESTIMONIALS: TestimonialCard[] = [
 
 export default function PassengerTestimonialsSection() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
-
+ console.log(activeVideo);
   // Smooth horizontal scroll for prev/next buttons
   const handleScroll = (direction: "left" | "right") => {
     if (scrollContainerRef.current) {
