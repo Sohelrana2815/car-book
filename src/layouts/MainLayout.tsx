@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Navbar from "../shared/Navbar";
+import Footer from "../shared/Footer";
 
 interface MainLayoutProps {
   children: ReactNode;
@@ -14,8 +15,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
       {/* flex-1 pushes the footer to the bottom when content height is small */}
       <div className="flex-1 flex flex-col w-full">{children}</div>
 
-      {/* <Footer /> */}
-      Footer
+      <Footer />
     </div>
   );
 }
