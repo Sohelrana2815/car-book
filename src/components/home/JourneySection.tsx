@@ -86,7 +86,7 @@ export default function JourneySection() {
         </div>
 
         {/* 2. Fixed Car Position in Bottom Left */}
-        <div className="absolute left-6 sm:left-12 mt-12 md:mt-4 z-10 w-28 sm:w-36 lg:w-48">
+        <div className="absolute left-6 sm:left-12 mt-7 md:mt-4 z-10 w-40 lg:w-48">
           <div className="relative w-full">
             {/* Car Body (Image without embedded wheels) */}
             <img
