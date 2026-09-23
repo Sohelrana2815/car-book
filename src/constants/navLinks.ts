@@ -1,8 +1,7 @@
 export const navLinks = [
-  { label: "About Us", href: "#" },
-  { label: "Earn With Garibook", href: "#" },
-  { label: "Garibook Business", href: "#" },
-  { label: "Garibook Club", href: "#" },
-  { label: "Campaign", href: "#" },
-  { label: "Blogs", href: "#" },
+  { label: "About Us", href: "/about" },
+  { label: "Earn With ", href: "/earn" },
+  { label: "Garibook Business", href: "/career" },
+  { label: "Garibook Club", href: "/blogs" },
+  { label: "Campaign", href: "/contact" },
 ];

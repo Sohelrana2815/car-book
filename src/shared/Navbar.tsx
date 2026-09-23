@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { navLinks } from "../constants/navLinks";
+import { NavLink } from "react-router";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,21 +21,21 @@ export default function Navbar() {
     <nav className="w-full bg-white border-b border-gray-100 z-40 relative">
       <div className="layout-container h-20 flex items-center justify-between">
         {/* Left: Logo */}
-        <a href="#" className="flex items-center gap-2">
+        <NavLink to="/" className="flex items-center gap-2">
           <img src="/favicon.svg" alt="Garibook Logo" className="h-8 w-8" />
           <span className="text-2xl font-medium tracking-tight">garibook</span>
-        </a>
+        </NavLink>
 
         {/* Center: Desktop Nav Links */}
         <ul className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) => (
             <li key={link.label}>
-              <a
-                href={link.href}
+              <NavLink
+                to={link.href}
                 className="text-gray-900 hover:text-blue-primary transition-colors font-medium"
               >
                 {link.label}
-              </a>
+              </NavLink>
             </li>
           ))}
         </ul>
