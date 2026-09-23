@@ -26,7 +26,7 @@ export default function HeroBanner() {
         gsap.fromTo(
           rightContentRef.current,
           {
-            y: 60,
+            y: 70,
             opacity: 0,
           },
           {
@@ -80,7 +80,7 @@ export default function HeroBanner() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-start">
           {/* Left Side: Typewriter Heading Area */}
           <div className="lg:col-span-7 min-h-[110px] sm:min-h-[130px] flex items-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-hero-title tracking-tight leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-hero-title tracking-tight leading-tight">
               {/* Target element for GSAP TextPlugin */}
               <span ref={headlineTextRef}></span>
 
