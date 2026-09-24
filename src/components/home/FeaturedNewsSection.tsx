@@ -21,8 +21,7 @@ const NEWS_ARTICLES: NewsArticle[] = [
       "বাংলাদেশে আন্তঃজেলা যাত্রী ভ্রমণের অভিজ্ঞতা আরও সহজ ও সাশ্রয়ী করতে গারি বুক নিয়ে এলো আধুনিক ডিজিটাল রাইড শেয়ারিং প্লাটফর্ম...",
     publisher: "প্রথম আলো",
     articleUrl: "#",
-    imageSrc:
-      "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=800&auto=format&fit=crop",
+    imageSrc: "assets/news/tour.webp",
   },
   {
     id: "news-2",
@@ -32,8 +31,7 @@ const NEWS_ARTICLES: NewsArticle[] = [
       "For the first time in Bangladesh, tourists can now book the iconic Chander Gari through an online platform...",
     publisher: "Dhaka Tribune",
     articleUrl: "#",
-    imageSrc:
-      "https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=800&auto=format&fit=crop",
+    imageSrc: "assets/news/garibook-truck.jpeg",
   },
   {
     id: "news-3",
@@ -43,8 +41,7 @@ const NEWS_ARTICLES: NewsArticle[] = [
       "বান্দরবান বান্দরবানের পর্যটনের জনপ্রিয় বাহন চান্দের গাড়ি। এবার এটি যুক্ত হচ্ছে ডিজিটাল প্রযুক্তিতে...",
     publisher: "কালের কণ্ঠ",
     articleUrl: "#",
-    imageSrc:
-      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=800&auto=format&fit=crop",
+    imageSrc: "assets/news/garibook-truck.jpeg",
   },
 ];
 
@@ -65,7 +62,6 @@ export default function FeaturedNewsSection() {
   return (
     <section className="news-featured-section w-full bg-white py-[70px]">
       <div className="layout-container flex flex-col gap-8">
-        
         {/* Header with Title and Navigation Arrows */}
         <div className="flex items-center justify-between gap-4">
           <SectionHeading
@@ -186,7 +182,6 @@ export default function FeaturedNewsSection() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

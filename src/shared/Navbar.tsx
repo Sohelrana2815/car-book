@@ -1,9 +1,25 @@
 import { useState, useEffect } from "react";
 import { navLinks } from "../constants/navLinks";
 import { NavLink } from "react-router";
+import LanguageToggle from "../components/LanguageToggle";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Detect scroll to hide top-right language button when scrolling down
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Prevent background scrolling when mobile menu is open
   useEffect(() => {
@@ -18,38 +34,52 @@ export default function Navbar() {
   }, [isMenuOpen]);
 
   return (
-    <nav className="w-full bg-white border-b border-gray-100 z-40 relative">
-      <div className="layout-container h-20 flex items-center justify-between">
+    <header className="sticky top-0 w-full bg-white border-b border-gray-100 z-40">
+      {/* Top Right Desktop Language Toggle (Hides smoothly on scroll down) */}
+      <div
+        className={`hidden lg:block absolute top-3 right-6 z-50 transition-all duration-300 ${
+          isScrolled ? "opacity-0 pointer-events-none" : "opacity-100"
+        }`}
+      >
+        <LanguageToggle className="px-5 py-2 text-lg" />
+      </div>
+
+      <nav className="layout-container h-24 flex items-center justify-between">
         {/* Left: Logo */}
-        <NavLink to="/" className="flex items-center gap-2">
-          <img src="/favicon.svg" alt="Garibook Logo" className="h-8 w-8" />
-          <span className="text-2xl font-medium tracking-tight">garibook</span>
+        <NavLink to="/" className="flex items-center gap-2 shrink-0">
+          <img
+            src="/favicon.svg"
+            alt="Garibook Logo"
+            className="w-36 lg:w-44"
+          />
         </NavLink>
 
-        {/* Center: Desktop Nav Links */}
-        <ul className="hidden lg:flex items-center gap-6">
-          {navLinks.map((link) => (
-            <li key={link.label}>
-              <NavLink
-                to={link.href}
-                className="text-gray-900 hover:text-blue-primary transition-colors font-medium"
-              >
-                {link.label}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
+        {/* Right Section: Nav Links + Login Button grouped together */}
+        <div className="hidden lg:flex items-center gap-6 xl:gap-8 ml-auto mr-16">
+          <ul className="flex items-center gap-5 xl:gap-7">
+            {navLinks.map((link) => (
+              <li key={link.label}>
+                <NavLink
+                  to={link.href}
+                  className="group relative py-2 text-gray-900 font-medium text-base xl:text-lg transition-colors duration-300 hover:text-blue-primary"
+                >
+                  {link.label}
+                  {/* Animated Expanding Underline */}
+                  <span className="absolute bottom-0 left-0 w-full h-[2.5px] bg-blue-primary origin-center scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100" />
+                </NavLink>
+              </li>
+            ))}
+          </ul>
 
-        {/* Right: Desktop Login Button */}
-        <div className="hidden lg:flex items-center gap-4">
-          <button className="bg-blue-primary hover:bg-blue-700 text-white px-8 py-2.5 rounded-md font-medium transition-colors">
+          {/* Login Button */}
+          <button className="bg-blue-primary hover:bg-blue-700 text-white px-6 py-1 rounded-lg font-medium transition-colors text-xl">
             login
           </button>
         </div>
 
-        {/* Right: Mobile Layout (Login + Hamburger) */}
-        <div className="flex lg:hidden items-center gap-4">
-          <button className="bg-blue-primary hover:bg-blue-700 text-white px-6 py-2 rounded-md font-medium transition-colors">
+        {/* Mobile Right Controls (Login + Mobile Menu Toggle) */}
+        <div className="flex lg:hidden items-center gap-3">
+          <button className="bg-blue-primary hover:bg-blue-700 text-white px-5 py-2 rounded-md font-medium text-sm transition-colors">
             login
           </button>
           <button
@@ -57,7 +87,6 @@ export default function Navbar() {
             className="p-2 text-gray-700"
             aria-label="Open menu"
           >
-            {/* Hamburger Icon */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -74,30 +103,15 @@ export default function Navbar() {
             </svg>
           </button>
         </div>
-      </div>
+      </nav>
 
-      {/* Full-Screen Mobile Menu Overlay */}
+      {/* Mobile Drawer Menu */}
       {isMenuOpen && (
         <div className="fixed inset-0 z-50 bg-blue-primary text-white flex flex-col">
-          {/* Mobile Menu Header: Language Toggle & Close Icon */}
           <div className="layout-container h-20 flex items-center justify-end gap-6 pt-2">
-            <button className="flex items-center gap-2 text-sm font-medium hover:opacity-80">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-5 h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802"
-                />
-              </svg>
-              English
-            </button>
+            {/* Reusable Language Toggle inside mobile menu */}
+            <LanguageToggle className="bg-white/20 text-white hover:bg-white/30 border border-white/20" />
+
             <button
               onClick={() => setIsMenuOpen(false)}
               className="p-2 hover:opacity-80"
@@ -120,21 +134,20 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Mobile Nav Links Centered */}
           <div className="flex-1 flex flex-col items-center justify-center gap-8 pb-20">
             {navLinks.map((link) => (
-              <a
+              <NavLink
                 key={link.label}
-                href={link.href}
+                to={link.href}
                 onClick={() => setIsMenuOpen(false)}
                 className="text-xl font-medium hover:text-btn-download transition-colors"
               >
                 {link.label}
-              </a>
+              </NavLink>
             ))}
           </div>
         </div>
       )}
-    </nav>
+    </header>
   );
 }

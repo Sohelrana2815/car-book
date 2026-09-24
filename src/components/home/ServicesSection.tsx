@@ -29,7 +29,8 @@ const TABS_DATA: Record<string, { subtitle: string; cards: ServiceCard[] }> = {
       {
         id: "airport",
         title: "Airport Rental",
-        description: "Whether you're flying abroad or returning home, enjoy a comfortable and worry-free airport journey.",
+        description:
+          "Whether you're flying abroad or returning home, enjoy a comfortable and worry-free airport journey.",
         icon: "🛫",
       },
       {
@@ -91,19 +92,18 @@ export default function ServicesSection() {
   return (
     <section className="w-full bg-white py-17.5">
       <div className="layout-container flex flex-col gap-8">
-        
         {/* Section Title & Tab Category Controls */}
         <div className="flex flex-col gap-6">
           <SectionHeading title="Our Services" as="h2" />
 
           {/* Category Tabs */}
-          <div className="flex items-center gap-3 overflow-x-auto pb-2">
+          <div className="flex flex-wrap gap-3.5 pt-2">
             {Object.keys(TABS_DATA).map((tab) => (
               <button
                 key={tab}
                 type="button"
                 onClick={() => setActiveTab(tab)}
-                className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-all cursor-pointer whitespace-nowrap ${
+                className={`px-4 py-2.5 rounded-xl text-sm font-semibold transition-all cursor-pointer whitespace-nowrap ${
                   activeTab === tab
                     ? "bg-blue-primary text-white shadow-sm"
                     : "bg-[#EAEAEA] hover:bg-gray-300 text-gray-800"
@@ -117,7 +117,11 @@ export default function ServicesSection() {
 
         {/* Dynamic Subheading for Active Tab */}
         <div className="pt-2">
-          <SectionHeading title={currentContent.subtitle} as="h3" className="text-3xl sm:text-4xl" />
+          <SectionHeading
+            title={currentContent.subtitle}
+            as="h3"
+            className="text-3xl sm:text-4xl"
+          />
         </div>
 
         {/* Cards Grid */}
@@ -141,14 +145,22 @@ export default function ServicesSection() {
 
                 {/* Content Area */}
                 <div>
-                  <h4 className={`text-lg font-bold mb-2 transition-colors ${
-                    isPrimary ? "text-white" : "text-hero-title group-hover:text-white"
-                  }`}>
+                  <h4
+                    className={`text-lg font-bold mb-2 transition-colors ${
+                      isPrimary
+                        ? "text-white"
+                        : "text-hero-title group-hover:text-white"
+                    }`}
+                  >
                     {card.title}
                   </h4>
-                  <p className={`text-sm leading-relaxed transition-colors ${
-                    isPrimary ? "text-white/90" : "text-gray-500 group-hover:text-white/90"
-                  }`}>
+                  <p
+                    className={`text-sm leading-relaxed transition-colors ${
+                      isPrimary
+                        ? "text-white/90"
+                        : "text-gray-500 group-hover:text-white/90"
+                    }`}
+                  >
                     {card.description}
                   </p>
                 </div>
@@ -156,7 +168,6 @@ export default function ServicesSection() {
             );
           })}
         </div>
-
       </div>
     </section>
   );

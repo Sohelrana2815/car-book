@@ -7,21 +7,20 @@ interface SmartDriverSectionProps {
 
 export default function SmartDriverSection({
   bannerBgColor = "bg-[#FDD300]", // Garibook signature yellow
-  driverImage = "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop",
+  driverImage = "assets/services/no_commission_app_screen.png",
 }: SmartDriverSectionProps) {
   return (
     <section className="smart-driver-section w-full bg-white py-[70px]">
       <div className="layout-container flex flex-col gap-8">
-        
         {/* Section Heading */}
         <SectionHeading title="Be a Smart Driver" as="h2" />
 
         {/* Yellow Promo Banner */}
         <div
-          className={`w-full ${bannerBgColor} rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg p-8 sm:p-12 lg:p-16 flex flex-col md:flex-row items-center justify-between gap-8 relative`}
+          className={`w-full ${bannerBgColor} rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg p-8 sm:p-12 lg:p-16 flex flex-col md:flex-row items-center md:items-end justify-between gap-8 relative`}
         >
           {/* Left Content */}
-          <div className="flex flex-col items-start gap-6 max-w-xl z-10">
+          <div className="flex flex-col items-start gap-6 max-w-xl z-10 md:py-4">
             <h3 className="text-3xl sm:text-5xl lg:text-6xl font-black text-blue-primary tracking-tight leading-tight">
               0% Commission <br />
               100% Freedom
@@ -49,18 +48,15 @@ export default function SmartDriverSection({
             </a>
           </div>
 
-          {/* Right Driver Image */}
-          <div className="w-full md:w-1/2 flex justify-center md:justify-end z-10">
-            <div className="relative w-full max-w-md h-[260px] sm:h-[340px] rounded-2xl overflow-hidden shadow-md border-4 border-white/20">
-              <img
-                src={driverImage}
-                alt="Smart Driver holding smartphone"
-                className="w-full h-full object-cover object-top"
-              />
-            </div>
+          {/* Right Driver Image - Anchored Flush to the Bottom */}
+          <div className="w-full md:w-1/2 flex justify-center md:justify-end items-end z-10 -mb-8 sm:-mb-12 lg:-mb-16">
+            <img
+              src={driverImage}
+              alt="Smart Driver holding smartphone"
+              className="h-[280px] sm:h-[360px] lg:h-[420px] w-auto object-contain object-bottom block"
+            />
           </div>
         </div>
-
       </div>
     </section>
   );

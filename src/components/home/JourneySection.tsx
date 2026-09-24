@@ -43,12 +43,12 @@ export default function JourneySection() {
   return (
     <section
       ref={containerRef}
-      className="w-full bg-blue-primary text-white pt-36 sm:pt-44 pb-28 relative overflow-hidden"
+      className="w-full bg-blue-primary text-white pt-40 sm:pt-44 lg:pt-86 pb-28 relative overflow-hidden"
     >
       <div className="layout-container">
         {/* Main Heading */}
-        <h2 className="text-3xl sm:text-5xl font-bold tracking-tight max-w-3xl leading-tight">
-          From Everyday Rides to Meaningful Journeys
+        <h2 className="text-3xl sm:text-5xl font-bold tracking-tight leading-tight">
+          From Everyday Rides to Meaningful <br /> Journeys
         </h2>
 
         {/* Statistics Grid */}

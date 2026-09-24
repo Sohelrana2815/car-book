@@ -13,10 +13,9 @@ const BLOG_POSTS: BlogPost[] = [
   {
     id: "blog-1",
     date: "September 15, 2026",
-    title: "রাইড শেয়ারিংয়ে বদলে যাচ্ছে বাংলাদেশের শহুরে পরিবহন ব্যবস্থা",
-    snippet: "রাইড শেয়ারিংয়ে বদলে যাচ্ছে বাংলাদেশের শহুরে পরিবহন ব্যবস্থা...",
-    imageSrc:
-      "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=800&auto=format&fit=crop",
+    title: "রাইড শেয়ারিংয়ে বদলে যাচ্ছে বাংলাদেশের শহুরে পরিবহন ব্যবস্থা",
+    snippet: "রাইড শেয়ারিংয়ে বদলে যাচ্ছে বাংলাদেশের শহুরে পরিবহন ব্যবস্থা...",
+    imageSrc: "assets/destination/destination-1.webp",
     blogUrl: "#",
   },
   {
@@ -24,8 +23,7 @@ const BLOG_POSTS: BlogPost[] = [
     date: "September 20, 2026",
     title: "সিলেটের দর্শনীয় স্থান সমূহ, খাবার ও থাকার ব্যবস্থা",
     snippet: "সিলেটের দর্শনীয় স্থান...",
-    imageSrc:
-      "https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=800&auto=format&fit=crop",
+    imageSrc: "assets/destination/destination-2.webp",
     blogUrl: "#",
   },
   {
@@ -33,8 +31,7 @@ const BLOG_POSTS: BlogPost[] = [
     date: "September 20, 2026",
     title: "নওগাঁর দর্শনীয় স্থান সমূহ, খাবার ও থাকার ব্যবস্থা",
     snippet: "নওগাঁর দর্শনীয় স্থান সমূহ...",
-    imageSrc:
-      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800&auto=format&fit=crop",
+    imageSrc: "assets/destination/destination-3.webp",
     blogUrl: "#",
   },
 ];
@@ -43,7 +40,6 @@ export default function BeyondDestinationsSection() {
   return (
     <section className="beyond-destinations-section w-full bg-white py-[70px]">
       <div className="layout-container flex flex-col gap-16">
-        
         {/* ================= 1. BLOGS HEADER & GRID ================= */}
         <div className="flex flex-col gap-8">
           {/* Section Header with "Show All Blogs" link */}
@@ -51,7 +47,8 @@ export default function BeyondDestinationsSection() {
             <div className="flex flex-col gap-2 max-w-2xl">
               <SectionHeading title="Beyond Destinations" as="h2" />
               <p className="text-sm sm:text-base text-gray-600">
-                Discover travel hacks, guides, and inspirations for your next intercity trip with Garibook.
+                Discover travel hacks, guides, and inspirations for your next
+                intercity trip with Garibook.
               </p>
             </div>
 
@@ -114,9 +111,9 @@ export default function BeyondDestinationsSection() {
         </div>
 
         {/* ================= 2. DOWNLOAD GARIBOOK MOBILE APP BANNER ================= */}
-        <div className="app-download-banner w-full bg-blue-primary rounded-2xl sm:rounded-3xl p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden shadow-xl text-white">
+        <div className="app-download-banner w-full bg-blue-primary rounded-2xl sm:rounded-3xl p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row items-center lg:items-end justify-between gap-8 relative overflow-hidden shadow-xl text-white">
           {/* Left Text & CTA Button */}
-          <div className="flex flex-col items-start gap-6 max-w-xl z-10">
+          <div className="flex flex-col items-start gap-6 max-w-xl z-10 lg:py-4">
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
               Download <br />
               Garibook Mobile App
@@ -148,18 +145,15 @@ export default function BeyondDestinationsSection() {
             </a>
           </div>
 
-          {/* Right Phone Hand Preview Image */}
-          <div className="w-full lg:w-1/2 flex justify-center lg:justify-end z-10">
-            <div className="relative w-full max-w-md h-[280px] sm:h-[360px] flex items-center justify-center">
-              <img
-                src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1000&auto=format&fit=crop"
-                alt="Garibook Mobile App Preview"
-                className="max-h-full object-contain rounded-2xl shadow-2xl"
-              />
-            </div>
+          {/* Right Phone Hand Preview Image - Flush to Bottom */}
+          <div className="w-full lg:w-1/2 flex justify-center lg:justify-end items-end z-10 -mb-8 sm:-mb-12 lg:-mb-16">
+            <img
+              src="assets/mobile-app/gari-book-app.png"
+              alt="Garibook Mobile App Preview"
+              className="h-[300px] sm:h-[400px] lg:h-[480px] w-auto object-contain object-bottom block"
+            />
           </div>
         </div>
-
       </div>
     </section>
   );

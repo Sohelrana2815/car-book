@@ -14,22 +14,25 @@ const TESTIMONIALS: TestimonialCard[] = [
     id: "testimonial-1",
     name: "Atif Haider",
     occupation: "Banker",
-    thumbnailSrc: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-    videoUrl: "https://www.youtube.com/watch?v=sample1",
+    thumbnailSrc:
+      "assets/feedback/feedback-1.jpg",
+    videoUrl: "assets/feedback/feedback-1.jpg",
   },
   {
     id: "testimonial-2",
     name: "Mohammad Habibur Rahman",
     occupation: "Banker",
-    thumbnailSrc: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-    videoUrl: "https://www.youtube.com/watch?v=sample2",
+    thumbnailSrc:
+      "assets/feedback/feedback-2.jpg",
+    videoUrl: "assets/feedback/feedback-2.jpg",
   },
   {
     id: "testimonial-3",
     name: "Sadia Afrin",
     occupation: "Service Holder",
-    thumbnailSrc: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop",
-    videoUrl: "https://www.youtube.com/watch?v=sample3",
+    thumbnailSrc:
+      "assets/feedback/feedback-3.jpg",
+    videoUrl: "assets/feedback/feedback-3.jpg",
   },
 ];
 
@@ -37,7 +40,7 @@ export default function PassengerTestimonialsSection() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
- console.log(activeVideo);
+  console.log(activeVideo);
   // Smooth horizontal scroll for prev/next buttons
   const handleScroll = (direction: "left" | "right") => {
     if (scrollContainerRef.current) {
@@ -52,18 +55,14 @@ export default function PassengerTestimonialsSection() {
   return (
     <section className="testimonials-section w-full bg-[#F1F6FF] py-[70px]">
       <div className="layout-container flex flex-col gap-8">
-        
         {/* Header Row: Title & Subtitle on Left, Navigation Arrows on Right */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="max-w-2xl flex flex-col gap-3">
-            <SectionHeading
-              title="Our Passengers Speak For Us"
-              as="h2"
-            />
+            <SectionHeading title="Our Passengers Speak For Us" as="h2" />
             <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-              Our journey was seamless and enjoyable from start to finish. The booking
-              process was straightforward, and the staff were incredibly attentive,
-              ensuring we felt comfortable throughout the trip.
+              Our journey was seamless and enjoyable from start to finish. The
+              booking process was straightforward, and the staff were incredibly
+              attentive, ensuring we felt comfortable throughout the trip.
             </p>
           </div>
 
@@ -141,7 +140,8 @@ export default function PassengerTestimonialsSection() {
                     Our passengers
                   </p>
                   <p className="text-xs font-black text-blue-primary leading-tight">
-                    speak <span className="text-gray-900 font-normal">for us</span>
+                    speak{" "}
+                    <span className="text-gray-900 font-normal">for us</span>
                   </p>
                 </div>
 
@@ -176,7 +176,6 @@ export default function PassengerTestimonialsSection() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

@@ -32,25 +32,10 @@ const FEATURES: FeatureItem[] = [
   },
 ];
 
-// // Preview of future GSAP integration: I will targe this .feature-card and use GSAP Animation future ✅✅✅
-// useGSAP(() => {
-//   gsap.from(".feature-card", {
-//     y: 50,
-//     opacity: 0,
-//     duration: 0.8,
-//     stagger: 0.2, // Animates Car -> Driver -> Fare sequentially
-//     scrollTrigger: {
-//       trigger: ".feature-card",
-//       start: "top 85%",
-//     },
-//   });
-// });
-
 export default function FreedomJourneySection() {
   return (
     <section className="w-full bg-black text-white py-[70px]">
       <div className="layout-container flex flex-col gap-10">
-        
         {/* 1. Section Heading */}
         <SectionHeading
           title="Freedom in Every Journey"
@@ -61,7 +46,7 @@ export default function FreedomJourneySection() {
         {/* 2. Main Banner Image */}
         <div className="w-full overflow-hidden rounded-2xl sm:rounded-3xl border border-white/10 shadow-2xl">
           <img
-            src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=2000&auto=format&fit=crop"
+            src="/assets/services/garibook_freedom.webp"
             alt="Passengers enjoying a comfortable ride in a car"
             className="w-full h-[280px] sm:h-[400px] lg:h-[480px] object-cover object-center"
           />
@@ -93,7 +78,6 @@ export default function FreedomJourneySection() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
-/* 1. Theme Configurations (Replaces tailwind.config.js) */
 @theme {
+  --font-sans: "Montserrat", sans-serif;
+
   --color-blue-primary: #0e52ff;
   --color-btn-download: #fdd300;
   --color-hero-title: #121212;
@@ -11,6 +12,7 @@
 }
 
 /* 2. Reusable Utility Classes (Tailwind v4 Native Directive) */
+/* 2. Reusable Utility Classes */
 @utility layout-container {
-  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full;
+  @apply max-w-350 mx-auto px-4 sm:px-6 lg:px-8 w-full;
 }

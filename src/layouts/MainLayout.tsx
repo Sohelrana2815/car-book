@@ -2,7 +2,6 @@ import { Outlet } from "react-router";
 import Footer from "../shared/Footer";
 import Navbar from "../shared/Navbar";
 
-
 export default function MainLayout() {
   return (
     // min-h-screen + flex-col guarantees the layout fills at least 100% viewport height

@@ -1,14 +1,11 @@
 export default function FooterPaymentMethods() {
   return (
-    <div className="w-full bg-white py-2 px-4 border-t border-gray-200 flex items-center justify-center overflow-hidden">
-      <div className="layout-container flex items-center justify-center gap-4 overflow-x-auto no-scrollbar">
-        <span className="text-xs font-bold text-blue-900 shrink-0 border-r border-gray-300 pr-3">
-          Pay With
-        </span>
+    <div className="w-full bg-white py-4 px-4 border-t border-gray-200 flex justify-center min-w-0">
+      <div className="layout-container w-full max-w-full min-w-0 flex justify-start lg:justify-center overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
         <img
-          src="https://garibook.com/assets/images/payment-methods.png"
-          alt="Supported Payment Gateways - Visa, Mastercard, bKash, Nagad"
-          className="h-7 min-w-[600px] object-contain"
+          src="/assets/footer/ssl.png"
+          alt="Supported Payment Gateways - Visa, Mastercard, bKash, Nagad, SSLCommerz"
+          className="h-10 sm:h-12 lg:h-14 w-auto max-w-none object-contain shrink-0"
         />
       </div>
     </div>

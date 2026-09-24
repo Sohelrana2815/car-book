@@ -11,19 +11,21 @@ const CARDS: ServiceCardItem[] = [
   {
     id: "airport",
     title: "Airport Rentals",
-    imageSrc: "https://images.unsplash.com/photo-1542296332-2e4473faf563?q=80&w=1000&auto=format&fit=crop",
+    imageSrc: "assets/services/Airport Rental.webp",
     imageAlt: "Airport car rental service",
   },
   {
     id: "family",
     title: "Family Trips",
-    imageSrc: "https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1000&auto=format&fit=crop",
+    imageSrc:
+      "assets/services/family_trips.webp",
     imageAlt: "Family trip inside car",
   },
   {
     id: "tours",
     title: "Long Tours",
-    imageSrc: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1000&auto=format&fit=crop",
+    imageSrc:
+      "assets/services/Group Tour.webp",
     imageAlt: "Group travel on long road trip",
   },
 ];
@@ -32,7 +34,6 @@ export default function MoreThanMilesSection() {
   return (
     <section className="w-full bg-white py-[70px]">
       <div className="layout-container flex flex-col gap-8">
-        
         {/* Section Heading */}
         <div className="max-w-3xl">
           <SectionHeading
@@ -71,7 +72,6 @@ export default function MoreThanMilesSection() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
