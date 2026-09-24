@@ -71,12 +71,11 @@ export default function HeroBanner() {
       className="w-full bg-white pt-10 sm:pt-16 lg:pt-20 pb-32 overflow-hidden"
     >
       <div className="layout-container">
-        {/* Top Split: Heading (Left) vs Paragraph & CTA (Right) */}
+        {/* Top Split: Heading (Left) Paragraph & CTA (Right) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-start">
-          
           {/* Left Side: Typewriter Heading Area */}
-          {/* FIX: items-start keeps line 1 top-aligned; min-h-[180px] reserves 2-line height on desktop */}
-          <div className="lg:col-span-7 min-h-[100px] sm:min-h-[130px] lg:min-h-[180px] flex items-start">
+
+          <div className="lg:col-span-7 min-h-25 sm:min-h-32.5 lg:min-h-45 flex items-start">
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-hero-title tracking-tight leading-tight">
               {/* Target element for GSAP TextPlugin */}
               <span ref={headlineTextRef}></span>
@@ -89,7 +88,7 @@ export default function HeroBanner() {
           </div>
 
           {/* Right Side: Description & Download Button Container */}
-          {/* FIX: lg:pt-1.5 aligns top of paragraph text with top of h1 font cap height */}
+
           <div
             ref={rightContentRef}
             className="lg:col-span-5 flex flex-col items-start gap-6 lg:pt-1.5"

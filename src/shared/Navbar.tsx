@@ -37,14 +37,14 @@ export default function Navbar() {
     <header className="sticky top-0 w-full bg-white border-b border-gray-100 z-40">
       {/* Top Right Desktop Language Toggle (Hides smoothly on scroll down) */}
       <div
-        className={`hidden lg:block absolute top-3 right-6 z-50 transition-all duration-300 ${
+        className={`hidden lg:block absolute top-2 xl:top-3 right-6 z-50 transition-all duration-300 ${
           isScrolled ? "opacity-0 pointer-events-none" : "opacity-100"
         }`}
       >
         <LanguageToggle className="px-5 py-2 text-lg" />
       </div>
 
-      <nav className="layout-container h-24 flex items-center justify-between">
+      <nav className="layout-container h-24 flex items-center justify-between py-0 md:py-20 2xl:py-0">
         {/* Left: Logo */}
         <NavLink to="/" className="flex items-center gap-2 shrink-0">
           <img

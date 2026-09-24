@@ -1,40 +1,7 @@
 import { useRef, useState } from "react";
 import SectionHeading from "../ui/SectionHeading";
-
-interface TestimonialCard {
-  id: string;
-  name: string;
-  occupation: string;
-  thumbnailSrc: string;
-  videoUrl?: string;
-}
-
-const TESTIMONIALS: TestimonialCard[] = [
-  {
-    id: "testimonial-1",
-    name: "Atif Haider",
-    occupation: "Banker",
-    thumbnailSrc:
-      "assets/feedback/feedback-1.jpg",
-    videoUrl: "assets/feedback/feedback-1.jpg",
-  },
-  {
-    id: "testimonial-2",
-    name: "Mohammad Habibur Rahman",
-    occupation: "Banker",
-    thumbnailSrc:
-      "assets/feedback/feedback-2.jpg",
-    videoUrl: "assets/feedback/feedback-2.jpg",
-  },
-  {
-    id: "testimonial-3",
-    name: "Sadia Afrin",
-    occupation: "Service Holder",
-    thumbnailSrc:
-      "assets/feedback/feedback-3.jpg",
-    videoUrl: "assets/feedback/feedback-3.jpg",
-  },
-];
+import { TESTIMONIALS } from "../../constants/testimonialData";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export default function PassengerTestimonialsSection() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -73,20 +40,7 @@ export default function PassengerTestimonialsSection() {
               aria-label="Previous Testimonial"
               className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-800 shadow-xs hover:bg-gray-50 transition-colors cursor-pointer"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="w-5 h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15.75 19.5 8.25 12l7.5-7.5"
-                />
-              </svg>
+              <ArrowLeft />
             </button>
 
             <button
@@ -94,20 +48,7 @@ export default function PassengerTestimonialsSection() {
               aria-label="Next Testimonial"
               className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-800 shadow-xs hover:bg-gray-50 transition-colors cursor-pointer"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="w-5 h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m8.25 4.5 7.5 7.5-7.5 7.5"
-                />
-              </svg>
+              <ArrowRight />
             </button>
           </div>
         </div>

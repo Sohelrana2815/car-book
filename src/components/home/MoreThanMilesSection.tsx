@@ -1,34 +1,5 @@
+import { CARDS } from "../../constants/serviceData";
 import SectionHeading from "../ui/SectionHeading";
-
-interface ServiceCardItem {
-  id: string;
-  title: string;
-  imageSrc: string;
-  imageAlt: string;
-}
-
-const CARDS: ServiceCardItem[] = [
-  {
-    id: "airport",
-    title: "Airport Rentals",
-    imageSrc: "assets/services/Airport Rental.webp",
-    imageAlt: "Airport car rental service",
-  },
-  {
-    id: "family",
-    title: "Family Trips",
-    imageSrc:
-      "assets/services/family_trips.webp",
-    imageAlt: "Family trip inside car",
-  },
-  {
-    id: "tours",
-    title: "Long Tours",
-    imageSrc:
-      "assets/services/Group Tour.webp",
-    imageAlt: "Group travel on long road trip",
-  },
-];
 
 export default function MoreThanMilesSection() {
   return (

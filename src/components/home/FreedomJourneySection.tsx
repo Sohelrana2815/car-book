@@ -1,36 +1,5 @@
+import { FEATURES } from "../../constants/freedomJourneyData";
 import SectionHeading from "../ui/SectionHeading";
-
-interface FeatureItem {
-  id: string;
-  title: string;
-  description: string;
-  icon: string;
-  bgColor: string; // Tailored badge background colors matching design
-}
-
-const FEATURES: FeatureItem[] = [
-  {
-    id: "car",
-    title: "Choose the Car",
-    description: "Pick what suits your comfort.",
-    icon: "🚗",
-    bgColor: "bg-blue-primary", // #0E52FF
-  },
-  {
-    id: "driver",
-    title: "Choose the Driver",
-    description: "Based on ratings and reviews.",
-    icon: "🛞",
-    bgColor: "bg-btn-download", // #FDD300
-  },
-  {
-    id: "fare",
-    title: "Choose the Fare",
-    description: "Select the bid that fits your budget.",
-    icon: "💵",
-    bgColor: "bg-emerald-500", // #10B981
-  },
-];
 
 export default function FreedomJourneySection() {
   return (
@@ -59,11 +28,15 @@ export default function FreedomJourneySection() {
               key={feature.id}
               className="feature-card flex flex-col items-start gap-3"
             >
-              {/* Circular Badge Icon */}
+              {/* Circular Badge Icon with Image */}
               <div
-                className={`w-9 h-9 rounded-full ${feature.bgColor} flex items-center justify-center text-white text-base shadow-sm`}
+                className={`w-12 h-12 rounded-full ${feature.bgColor} flex items-center justify-center p-2 shadow-sm`}
               >
-                {feature.icon}
+                <img
+                  src={feature.iconSrc}
+                  alt={feature.title}
+                  className="w-full h-full object-contain"
+                />
               </div>
 
               {/* Title */}
