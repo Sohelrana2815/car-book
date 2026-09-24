@@ -4,12 +4,6 @@ A responsive, production-quality recreation of the [Garibook](https://garibook.c
 
 ---
 
-## 🔗 Project Links
-
-- **Live Demo:** [https://gari-book-bd.vercel.app](https://www.google.com/search?q=https://garibook-clone.vercel.app&utm_source=gemini)
-
----
-
 ## 🚀 Key Features
 
 - **Visual Accuracy & Precision:** Closely matches Garibook's spacing, typography, layout hierarchy, and brand colors `#F1F6FF` and `#0057FF`[cite: 23, 25, 31].
